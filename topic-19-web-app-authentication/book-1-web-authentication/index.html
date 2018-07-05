@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-1-javascript-intro/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-2.1 JS Intro
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-2-javascript-fundamentals/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-2.2 JS Basics
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-03-jquery+dom/book-3-jquery/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-3 JQuery
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-1-ajax-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-4.1 Github API
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-2-ajax-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-4.2-FoureSquare API
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-05-applications/book-applications/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-5 Applications
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-06-views/book-views/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-6 Views
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-07-sessions/book-sessions/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-7 Sessions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-08-models/book-models/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-8 Models
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-09-validation/book-validation/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-9 Validation
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-10-deployment/book-deployment/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10 Deployment
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-11-seeding/book-seeding/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11 Seeding
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-12-api/book-api/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12 Apis
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-13-security-introduction/book-1-pgp-gpg/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-13 GPG
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-14-security-foundations/book-1-openssl/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-14 OpenSSL and Certificates
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-15-authentication+tls/book-1-tls-configuration/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-15 TLS Configuration
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-16-tdd/book-tdd/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-16 Tdd
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-17-webapp-threats+vulnerabilities/book-1-misuse-cases/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-17 Misuse Cases
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-18-rest/book-rest/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-18 Rest
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-19-web-app-authentication/book-1-web-authentication/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-19 Authentication techniques
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-20-rest-client/book-rest-client/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-19 Java Rest Client
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-21-aurelia-1/book-aurelia-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-1-burp-proxy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Burp-Proxy
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-2-regex/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Regular Expressions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-3-xss/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+XSS tips
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-23-aurelia-2/book-aurelia-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 3
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3-ts/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Aurelia Lab 3 TS
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 4
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-ts-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 4 TS
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-a-hapi-auth/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Hapi-JWT
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 5
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5-ts/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 5 TS
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>19: Web app authentication </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-19 Authentication techniques</a></li>
+            
+              <li><a href="#">1-Passwords</a></li>
+            
+              <li><a href="#">2-Basic Auth</a></li>
+            
+              <li><a href="#">3-OAuth</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>In this lab, we will walk through some examples in class of how to add various authentication-related features to a web application.  You may adapt these for the purposes of your web application security assignment report. In particular we will examine:</p>
+<ol>
+<li>Password hashing &amp; salting</li>
+<li>HTTP Basic authentication</li>
+<li>Using OAuth</li>
+</ol>
+</li>
+        
+          <li> <h2>Password hashing &amp; salting</h2>
+<p>The <a href="https://www.npmjs.com/package/bcrypt">bcrypt</a> module provides password hashing and salting.</p>
+<p>When <em>registering</em> a new user or <em>changing</em> password, convert the supplied password to a hashed and salted version with <font face="Courier">bcrypt.hash</font></p>
+<pre><code>bcrypt.hash(plaintextPassword, saltRounds, function(err, hash) {
+   // Store hash in your password DB. 
+});</code></pre>
+<p>To <em>check</em> a password entered by a user against the stored value, read the stored value (called <strong>hash</strong> here) and compare with <font face="Courier">bcrypt.compare</font></p>
+<pre><code>bcrypt.compare(candidatePassword, hash, function(err, res) { 
+  // res is true if password is correct
+});</code></pre>
+<p>This <a href="archive/accounts.js">edited version of the accounts.js</a> controller from <a href="https://bitbucket.org/edeleastar/donation-web-final">donation-web-final</a> implements both of these for user registration, password update and authentication.</p>
+<p>Note that any database initialisation you have will also need to be updated - see new version of <a href="archive/initdata.json">initdata.json</a>. These were populated with values created with an <a href="https://www.dailycred.com/article/bcrypt-calculator">online bcrypt calculator</a>.</p>
+<p>The lecture notes contain some background on password hashing and salting.</p>
+<p>You can get donation-web-final with the following command:</p>
+<pre>
+git clone https://bitbucket.org/edeleastar/donation-web-final.git
+</pre>
+
+<p>Then overwrite <em>app/controllers/accounts.js</em> with the version of <em>accounts.js</em> linked below.
+Likewise overwrite <em>app/models/initdata.json</em> with the version of <em>initdata.json</em> linked below.</p>
+<p>Start mongod in a new terminal</p>
+<pre>
+sudo mongod
+</pre>
+
+<p>Then you should be able to run the app and see hashed and salted passwords</p>
+<pre>
+cd donation-web-final
+npm install
+node index.js
+</pre>
+
+<p>Resources:</p>
+<ul>
+<li><a href="archive/accounts.js">accounts.js with password hashing and salting</a></li>
+<li><a href="archive/initdata.json">initdata.json (updated with hashed and salted passwords)</a></li>
+<li><a href="https://www.dailycred.com/article/bcrypt-calculator">Online bcrypt calculator (for initialisation/testing)</a></li>
+</ul>
+</li>
+        
+          <li> <h1>HTTP Basic Authentication demo</h1>
+<p>This code demonstrates HTTP Basic Authentication using the <em>hapi-auth-basic</em> module</p>
+<p>Required modules: hapi, bcrypt, hapi-auth-basic</p>
+<pre><code>&#39;use strict&#39;;
+
+const Hapi = require(&#39;hapi&#39;);
+
+const server = new Hapi.Server();
+server.connection({port:4000});
+
+server.start((err) =&gt; {
+
+    if (err) {
+        throw err;
+    }
+    console.log(`Server running at: ${server.info.uri}`);
+});
+
+const Bcrypt = require(&#39;bcrypt&#39;);
+
+const users = {
+    john: {
+        username: &#39;john&#39;,
+        password: &#39;$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm&#39;,   // &#39;secret&#39;
+        name: &#39;John Doe&#39;,
+        id: &#39;2133d32a&#39;
+    }
+};
+
+const validate = function (request, username, password, callback) {
+
+    const user = users[username];
+    if (!user) {
+        return callback(null, false);
+    }
+
+    Bcrypt.compare(password, user.password, (err, isValid) =&gt; {
+
+        callback(err, isValid, { id: user.id, name: user.name });
+    });
+};
+
+server.register(require(&#39;hapi-auth-basic&#39;), (err) =&gt; {
+
+    server.auth.strategy(&#39;simple&#39;, &#39;basic&#39;, { validateFunc: validate });
+
+    server.route({ 
+        method: &#39;GET&#39;, 
+        path: &#39;/&#39;, 
+        config: { auth: &#39;simple&#39; } ,
+        handler: function (request, reply) {
+            reply(&#39;Hello, world!&#39;);
+        }
+    });
+});</code></pre>
+<p>To run this, save <a href="archive/basic.js">this program (basic.js)</a> to a new folder and run:</p>
+<pre>
+npm install hapi bcrypt hapi-auth-basic
+node basic.js
+</pre>
+
+<p>Now open a new browser tab and go to Developer Tools (right click and <strong>Inspect</strong> in Chrome). Select the <strong>Network</strong> tab and browse to <a href="http://localhost:4000">http://localhost:4000</a>. </p>
+<p>Observe that a <strong>WWW-Authenticate:Basic</strong> Response Header is set.
+<img src="img/basic1.png" alt="WWW-Authenticate:Basic Response Header"></p>
+<p>Entering the correct username and password (john/secret) sets an Authorization header in <em>all</em> requests to that domain until the browser is closed.  Note that this the username and password are just encoded and not encrypted. </p>
+<p><img src="img/basic2.png" alt="Base64-encoded Authorization header"></p>
+<p>Try any online Base64 decoder to find what <em>am9objpzZWNyZXQ</em> maps to.</p>
+</li>
+        
+          <li> <h1>Using OAuth</h1>
+<p>The short tutorial linked here shows how to use the <a href="https://www.npmjs.com/package/bell">bell</a> plugin for OAuth - to allow your users to give your application privileged access to aspects of their account on any of a number of services - such as Twitter, Facebook, Google, Microsoft, LinkedIn, etc.</p>
+<ul>
+<li><a href="https://www.sitepoint.com/oauth-integration-using-hapi/">Tutorial on OAuth integration using Hapi</a></li>
+</ul>
+<p>This tutorial is based on getting access to the user&#39;s GitHub account.  The sample application code provided below is based on this (adapted to Twitter).</p>
+<ul>
+<li><a href="archive/oauth-twitter.zip">Sample code (access to Twitter account)</a>. </li>
+</ul>
+<p>This code contains placeholders for a Client ID and Client Secret which can be obtained by registering your app at <a href="https://apps.twitter.com/"><a href="https://apps.twitter.com/">https://apps.twitter.com/</a></a>. You also need to specify a callback URL which could for example be <a href="http://127.0.0.1/">http://127.0.0.1/</a> or <a href="http://127.0.0.1/account">http://127.0.0.1/account</a></p>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

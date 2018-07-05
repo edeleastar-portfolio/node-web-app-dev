@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-1-javascript-intro/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-2.1 JS Intro
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-2-javascript-fundamentals/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-2.2 JS Basics
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-03-jquery+dom/book-3-jquery/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-3 JQuery
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-1-ajax-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-4.1 Github API
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-2-ajax-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-4.2-FoureSquare API
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-05-applications/book-applications/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-5 Applications
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-06-views/book-views/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-6 Views
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-07-sessions/book-sessions/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-7 Sessions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-08-models/book-models/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-8 Models
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-09-validation/book-validation/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-9 Validation
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-10-deployment/book-deployment/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10 Deployment
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-11-seeding/book-seeding/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11 Seeding
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-12-api/book-api/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12 Apis
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-13-security-introduction/book-1-pgp-gpg/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-13 GPG
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-14-security-foundations/book-1-openssl/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-14 OpenSSL and Certificates
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-15-authentication+tls/book-1-tls-configuration/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-15 TLS Configuration
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-16-tdd/book-tdd/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-16 Tdd
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-17-webapp-threats+vulnerabilities/book-1-misuse-cases/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-17 Misuse Cases
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-18-rest/book-rest/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-18 Rest
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-19-web-app-authentication/book-1-web-authentication/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-19 Authentication techniques
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-20-rest-client/book-rest-client/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-19 Java Rest Client
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-21-aurelia-1/book-aurelia-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-1-burp-proxy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Burp-Proxy
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-2-regex/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Regular Expressions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-3-xss/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+XSS tips
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-23-aurelia-2/book-aurelia-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 3
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3-ts/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Aurelia Lab 3 TS
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 4
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-ts-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 4 TS
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-a-hapi-auth/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Hapi-JWT
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 5
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5-ts/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-Aurelia 5 TS
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>15: Authentication & TLS </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-15 TLS Configuration</a></li>
+            
+              <li><a href="#">1-Intro</a></li>
+            
+              <li><a href="#">2</a></li>
+            
+              <li><a href="#">3</a></li>
+            
+              <li><a href="#">4</a></li>
+            
+              <li><a href="#">5</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>The objective of this lab is to learn about configuring TLS (formerly SSL) on web servers. </p>
+<p>In this exercise, you will: </p>
+<ul>
+<li><p>Set yourself up as a Certification Authority</p>
+<ul>
+<li>Create private key and certificate request for yourself as a CA</li>
+<li>Create and install CA self-signed certificate (effectively a root certificate)<br><br></li>
+</ul>
+</li>
+<li><p>Configure web server security</p>
+<ul>
+<li>Install server private key and server (public key) certificate</li>
+<li>Configure nginx and node/hapi for TLS</li>
+</ul>
+</li>
+</ul>
+</li>
+        
+          <li> <h2>Certificate Authorities</h2>
+<p>The term <em>Certificate Authority (CA)</em> refers to anyone who issues (i.e. signs) digital certificates. 
+As we&#39;ll see below, anyone (even you!) can be a CA, though certain CAs are widely trusted on the Internet and their certificates are accepted by browsers that support them.</p>
+<p>Most widely-recognised certificate authorities charge a fee for issuing certificates. Examples are Comodo GoDaddy, DigiCert and GlobalSign. Some have free trial certificates with short validity period (e.g. 30 days).  There are also some free services, including <a href="https://letsencrypt.org/">Let&#39;s Encrypt</a>.
+In practice, this is where you would get a certificate for a production server.  For the purposes of this lab, however, we will generate our own.</p>
+</li>
+        
+          <li> <h1>Getting a signed certificate</h1>
+<h2>Become a Certificate Authority yourself</h2>
+<p>To be a CA, you create a public/private key pair and issue yourself with a certificate containing this public key.  This cert will be self-signed, meaning you&#39;ll be signing it with your private key.</p>
+<ul>
+<li><p>Launch Linux or other environment that has OpenSSL installed and start a terminal session. In you do not have Linux on your own machine, you can create an AWS EC2 instance and connect to it using SSH.</p>
+</li>
+<li><p>We first create a 2048-bit RSA private key for the CA</p>
+<pre><code>openssl genrsa -out myca.key 2048</code></pre>
+<p>The key is created in PEM format, which is printable:</p>
+<pre><code>cat myca.key</code></pre>
+</li>
+<li><p>Now use this to create a certificate signing request (CSR) for the certificate authority (so the CA can sign its own key):</p>
+<pre><code>openssl req -new -key myca.key -out myca.csr</code></pre>
+<p>You will be prompted for identification data for the subject of this signing request. Make up an identity for your &quot;pretend&quot; CA (e.g. Highly Secure Certificates Ltd, or suchlike).<br><br></p>
+</li>
+<li><p>Now, as CA, use your private key to issue a (self-)signed certificate based on the CSR:</p>
+<pre><code>openssl x509 -req -trustout -signkey myca.key -in myca.csr -out myca.crt</code></pre>
+<p>The resulting certificate is valid for just 30 days (default). If you would like it to last longer (e.g. a year), run again with the additional option <em>-days 365</em></p>
+</li>
+</ul>
+<h2>Create keys and a certificate signing request for an application (e.g. web server)</h2>
+<ul>
+<li>We now create a 2048-bit RSA private key for the web server<pre><code>openssl genrsa -out webserver.key 2048</code></pre>
+</li>
+<li>Now use this to create a certificate signing request for the web server:<pre><code>openssl req -new -key webserver.key -out webserver.csr</code></pre>
+You&#39;ll be prompted for identification data for the subject of the signing request. Make up an identity for your web server here.</li>
+</ul>
+<h2>Get your own CA to create and sign the web server certificate</h2>
+<ul>
+<li><p>Get the CA, using its private key, to sign the server’s CSR file:</p>
+<pre><code>openssl x509 -req -CA myca.crt -CAkey myca.key -CAcreateserial -in webserver.csr -out webserver.crt</code></pre>
+<p>You now have a web server public key, signed by a third party (the CA), in the file <em>webserver.crt</em>. You also have the web server&#39;s private key in the file <em>webserver.key</em> that you generated above.<br><br></p>
+</li>
+<li><p>(Optional) You could alternatively have got your web server to self-sign its certificate. The command for this is:</p>
+<pre><code>openssl x509 -req -in webserver.csr -signkey webserver.key -out webserver_self.crt</code></pre>
+<p>The next step is to configure your web server to be able to locate these keys. </p>
+</li>
+</ul>
+</li>
+        
+          <li> <h1>Hapi/Node TLS Configuration</h1>
+<p>You can configure a Hapi.js server to listen for HTTPS connections.</p>
+<ul>
+<li><p>Make a directory (called <em>private</em>, for example) in a Hapi application and copy your <em>webserver.key</em> and <em>webserver.crt</em> files there. You may use an application you are working on, or download the very basic application provided <a href="archive/hapi_example.js">here</a>.<br><br></p>
+</li>
+<li><p>Add the following lines before adding a server connection:</p>
+<pre>
+const fs = require('fs');
+var options = {
+  port: 4443,     //  or any port you wish
+  tls: {
+      key: fs.readFileSync('private/webserver.key'),
+      cert: fs.readFileSync('private/webserver.crt')
+  }
+};
+</pre>
+</li>
+<li><p>Then pass options as a parameter to <em>server.connection()</em>:</p>
+<pre>
+server.connection(options);
+</pre>
+</li>
+<li><p>Next start the server </p>
+<pre><code>node hapi_tls_example.js</code></pre>
+</li>
+<li><p>Test that it’s working by pointing a web browser to <a href="https://localhost:4443"><a href="https://localhost:4443">https://localhost:4443</a></a> (replace <em>localhost</em> if published elsewhere).<br><br></p>
+</li>
+<li><p>Replace the reference to webserver.crt with <em>webserver_self.crt</em> as created in step 2, restart node and browse again to <a href="https://localhost:4443"><a href="https://localhost:4443">https://localhost:4443</a></a>. Have a look at the certificate trust chain and see the difference.</p>
+</li>
+</ul>
+</li>
+        
+          <li> <h1>Nginx TLS Configuration (e.g. on AWS EC2 instance)</h1>
+<p>Here, we similarly configure a Nginx server to listen for HTTPS connections.</p>
+<h2>Create an nginx web server</h2>
+<ul>
+<li><p>Create an EC2 instance and connect to it with SSH/PuTTY. </p>
+</li>
+<li><p>Install nginx, enable at startup, and start service.</p>
+<pre><code>sudo yum -y update
+sudo yum –y install nginx
+sudo chkconfig nginx on
+sudo service nginx start</code></pre>
+<p>You should now be able to browse to the public IP address of your instance and see the nginx welcome page.</p>
+</li>
+</ul>
+<h2>Configure TLS on nginx</h2>
+<ul>
+<li><p>Create a directory for the web server certificate and private key you created in part A above. You will need to copy them to your EC2 instance using SCP/WinSCP unless you wish to create new versions.</p>
+<pre><code>sudo mkdir /etc/pki/nginx</code></pre>
+</li>
+<li><p>Copy the certificate and key files to this location </p>
+<pre><code>sudo cp webserver.key /etc/pki/nginx
+sudo cp webserver.crt /etc/pki/nginx</code></pre>
+</li>
+<li><p>Now edit the nginx configuration:</p>
+<pre><code>sudo nano /etc/nginx/nginx.conf</code></pre>
+</li>
+<li><p>Scroll down to the bottom of the file and find the section that begins with:</p>
+<pre>
+# HTTPS server
+</pre>
+</li>
+<li><p>Nginx supports having more than one website enabled at the same time, which in effect means listening on a different port for each one. By default, one site is configured to listen on port 80. Your objective is to enable another site to listen on port 443.</p>
+</li>
+<li><p>To do this, uncomment the entire section under this heading </p>
+<pre>
+  # Settings for a TLS enabled server.
+  #
+  server {
+      listen       443;
+  etc…
+</pre>
+</li>
+<li><p>and make the two changes shown here:</p>
+<pre>
+     ssl_certificate      /etc/pki/nginx/webserver.crt;
+     ssl_certificate_key  /etc/pki/nginx/webserver.key;
+</pre>
+</li>
+<li><p>Finally, restart nginx:</p>
+<pre><code>sudo service nginx restart</code></pre>
+</li>
+</ul>
+<h2>Test it</h2>
+<ul>
+<li><p>Edit your instance&#39;s security group to allow incoming connections to port 443.<br><br></p>
+</li>
+<li><p>Enter the following in a web browser:
+<pre><a href="https://ip_address">https://ip_address</a></pre>    (replacing <em>ip_address</em> with your instance’s Public IP address)<br><br></p>
+</li>
+<li><p>You&#39;ll get a warning as your certificate is signed by a CA that your browser doesn&#39;t trust.  You should be able to view the certificate and verify that it&#39;s the one that you created.</p>
+</li>
+</ul>
+</li>
+        
+          <li> <h1>(Optional) Configuring cipher suites</h1>
+<ul>
+<li><p>Using <a href="https://www.wireshark.org/">Wireshark</a> or equivalent, capture the setup of a TLS session from a browser to a web server. It should start with a &quot;Client Hello&quot; message, something like that shown here: <img src="img/tls_wireshark.png" alt="Tracing establishment of TLS connection"></p>
+</li>
+<li><p>Trace the TLS handshake. What TLS version is used? What Cipher Suite does the browser prefer?  Does the server match this?  Try a variety of browsers and web servers and see if you can find examples where they don&#39;t match.</p>
+</li>
+<li><p>On your Nginx configuration, edit the <em>nginx.conf</em> file to force browsers to downgrade from TLSv1 and describe what happens.  Try a variety of browsers and see if they all treat this in the same way.</p>
+</li>
+<li><p>Re-enable TLSv1 and now see what happens when you change the supported cipher specs to something different, and see how various browsers respond.  You&#39;ll need to change the line in the nginx SSL configuration that begins with <em>ssl_ciphers</em>.  Try for example to change it to: <em>RC4-MD5</em></p>
+</li>
+<li><p>Note that you can also force browsers to only use an up to date version and/or cipher – e.g. TLSv1.2.  Are there any disadvantages in doing this?  There are various test suites available that allow you to try old browser versions – e.g. <a href="https://crossbrowsertesting.com"><a href="https://crossbrowsertesting.com">https://crossbrowsertesting.com</a></a> or <a href="https://www.browserling.com"><a href="https://www.browserling.com">https://www.browserling.com</a></a></p>
+</li>
+</ul>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>
