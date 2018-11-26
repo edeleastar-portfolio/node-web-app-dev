@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,239 +66,267 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 20: Java Rest Client  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-19 Java Rest Client">
-        Lab-19 Java Rest Client
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 20: Java Rest Client  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-19 Java Rest Client">
+          Lab-19 Java Rest Client
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-1-javascript-intro/index.html">Lab-2.1 JS Intro </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-2-javascript-fundamentals/index.html">Lab-2.2 JS Basics </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-03-jquery+dom/book-3-jquery/index.html">Lab-3 JQuery </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-1-ajax-1/index.html">Lab-4.1 Github API </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-2-ajax-2/index.html">Lab-4.2-FoureSquare API </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-05-applications/book-applications/index.html">Lab-5 Applications </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-06-views/book-views/index.html">Lab-6 Views </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-07-sessions/book-sessions/index.html">Lab-7 Sessions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-08-models/book-models/index.html">Lab-8 Models </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-09-validation/book-validation/index.html">Lab-9 Validation </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-10-deployment/book-deployment/index.html">Lab-10 Deployment </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-11-seeding/book-seeding/index.html">Lab-11 Seeding </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-12-api/book-api/index.html">Lab-12 Apis </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-13-security-introduction/book-1-pgp-gpg/index.html">Lab-13 GPG </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-14-security-foundations/book-1-openssl/index.html">Lab-14 OpenSSL and Certificates </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-15-authentication+tls/book-1-tls-configuration/index.html">Lab-15 TLS Configuration </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-16-tdd/book-tdd/index.html">Lab-16 Tdd </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-17-webapp-threats+vulnerabilities/book-1-misuse-cases/index.html">Lab-17 Misuse Cases </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-18-rest/book-rest/index.html">Lab-18 Rest </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-19-web-app-authentication/book-1-web-authentication/index.html">Lab-19 Authentication techniques </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-20-rest-client/book-rest-client/index.html">Lab-19 Java Rest Client </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-21-aurelia-1/book-aurelia-1/index.html">Lab-Aurelia 1 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-1-burp-proxy/index.html">Lab-Burp-Proxy </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-2-regex/index.html">Regular Expressions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-3-xss/index.html">XSS tips </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-23-aurelia-2/book-aurelia-2/index.html">Lab-Aurelia 2 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3/index.html">Lab-Aurelia 3 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3-ts/index.html">Aurelia Lab 3 TS </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-4/index.html">Lab-Aurelia 4 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-ts-4/index.html">Lab-Aurelia 4 TS </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-a-hapi-auth/index.html">Lab-Hapi-JWT </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5/index.html">Lab-Aurelia 5 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5-ts/index.html">Lab-Aurelia 5 TS </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-19 Java Rest Client">
-          <h1>Objectives</h1>
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-1-javascript-intro/index.html">Lab-2.1 JS Intro </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-02-js-review/book-2-javascript-fundamentals/index.html">Lab-2.2 JS Basics </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-03-jquery+dom/book-3-jquery/index.html">Lab-3 JQuery </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-1-ajax-1/index.html">Lab-4.1 Github API </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-04-ajax+apis/book-2-ajax-2/index.html">Lab-4.2-FoureSquare API </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-05-applications/book-applications/index.html">Lab-5 Applications </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-06-views/book-views/index.html">Lab-6 Views </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-07-sessions/book-sessions/index.html">Lab-7 Sessions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-08-models/book-models/index.html">Lab-8 Models </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-09-validation/book-validation/index.html">Lab-9 Validation </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-10-deployment/book-deployment/index.html">Lab-10 Deployment </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-11-seeding/book-seeding/index.html">Lab-11 Seeding </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-12-api/book-api/index.html">Lab-12 Apis </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-13-security-introduction/book-1-pgp-gpg/index.html">Lab-13 GPG </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-14-security-foundations/book-1-openssl/index.html">Lab-14 OpenSSL and Certificates </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-15-authentication+tls/book-1-tls-configuration/index.html">Lab-15 TLS Configuration </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-16-tdd/book-tdd/index.html">Lab-16 Tdd </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-17-webapp-threats+vulnerabilities/book-1-misuse-cases/index.html">Lab-17 Misuse Cases </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-18-rest/book-rest/index.html">Lab-18 Rest </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-19-web-app-authentication/book-1-web-authentication/index.html">Lab-19 Authentication techniques </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-20-rest-client/book-rest-client/index.html">Lab-19 Java Rest Client </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-21-aurelia-1/book-aurelia-1/index.html">Lab-Aurelia 1 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-1-burp-proxy/index.html">Lab-Burp-Proxy </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-2-regex/index.html">Regular Expressions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-22-pentesting/book-3-xss/index.html">XSS tips </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-23-aurelia-2/book-aurelia-2/index.html">Lab-Aurelia 2 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3/index.html">Lab-Aurelia 3 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-24-aurelia-3/book-aurelia-3-ts/index.html">Aurelia Lab 3 TS </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-4/index.html">Lab-Aurelia 4 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-25-aurelia-4/book-aurelia-ts-4/index.html">Lab-Aurelia 4 TS </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-a-hapi-auth/index.html">Lab-Hapi-JWT </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5/index.html">Lab-Aurelia 5 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io//node-web-app-dev//topic-26-aurelia-5/book-b-aurelia-5-ts/index.html">Lab-Aurelia 5 TS </a>
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-19 Java Rest Client">
+            <h1>Objectives</h1>
 <p>Create a new standard java project specifically to test the API we have developed in donation-service-play project.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>donation-service-test</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>donation-service-test</h1>
 <p>Create a new Java Project in eclipse - this time neither a play nor an Android app, just a simple Java Application. Call the Project donation-service-play-test&quot;</p>
 <p><img src="./img/01.png" alt=""></p>
 <p>Now download this archive here:</p>
@@ -312,10 +340,10 @@ h3 {
 <p>The project should now be configured thus:</p>
 <p><img src="./img/06.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Model Classes</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Model Classes</h1>
 <h2>app.donation.model</h2>
 <p>In donation-service-test, create a new package called &#39;app.donation.model&#39;. Incorporate the following two classes into this package:</p>
 <h2>User</h2>
@@ -372,10 +400,10 @@ public class Donation
 <p>These are java versions of the Mongoose javascript models we have developed in donaiton-web. Compare them now - can you see any differences?</p>
 <p>In particular, look closely at Donation.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h2>API Classes</h2>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h2>API Classes</h2>
 <p>In donation-service-test, create a new package called &#39;app.donation.api&#39;. Incorporate the following two classes into this package:</p>
 <h2>DonationService</h2>
 <pre><code>package app.donation.api;
@@ -480,10 +508,10 @@ public class DonationServiceAPI
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Main</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Main</h1>
 <p>Create another package called &#39;app.donation.test&#39;, and incorporate this class:</p>
 <pre><code>public class Main
 {
@@ -597,10 +625,10 @@ public class DonationServiceAPI
 </ul>
 <p>However, our client is Java, not Javascript. These classes we have produced here will be ideal starting points for building out the Android classes we need to hook up the donation-andoid app to the donation-web service.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Creating Donations</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Creating Donations</h1>
 <p>Try this at the end of the main method:</p>
 <pre><code>    Donation donation = new Donation(5000, &quot;paypal&quot;);
     service.createDonation(candidates.get(0), donation);
@@ -617,10 +645,10 @@ public class DonationServiceAPI
   }</code></pre>
 <p>Check the web app to see if it was created.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Donation Model</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Donation Model</h1>
 <p>Looking again at the donation model:</p>
 <pre><code>public class Donation
 {
@@ -751,10 +779,10 @@ public class DonationComplete
   }
 ]</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <p>Archive of the the project so far:</p>
 <ul>
 <li><a href="https://github.com/wit-ictskills-2016/donation-service-test">https://github.com/wit-ictskills-2016/donation-service-test</a></li>
@@ -764,14 +792,16 @@ public class DonationComplete
 <h2>Exercise 2:</h2>
 <p>Experiment with accessing a deployed version of the API.</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -791,7 +821,7 @@ public class DonationComplete
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -824,6 +854,16 @@ public class DonationComplete
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>
